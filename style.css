@@ -1,0 +1,290 @@
+/* ===============================
+   GLOBAL STYLE
+=================================*/
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+scroll-behavior:smooth;
+}
+
+body{
+background:linear-gradient(to right,#f8f6f1,#ffffff);
+color:#222;
+line-height:1.6;
+overflow-x:hidden;
+}
+
+
+/* ===============================
+   NAVBAR
+=================================*/
+
+nav{
+background:rgba(0,0,0,0.9);
+padding:18px;
+position:sticky;
+top:0;
+z-index:1000;
+backdrop-filter:blur(10px);
+}
+
+nav ul{
+display:flex;
+justify-content:center;
+gap:45px;
+list-style:none;
+}
+
+nav a{
+color:white;
+text-decoration:none;
+font-weight:500;
+padding:10px 18px;
+border-radius:30px;
+transition:0.4s;
+position:relative;
+}
+
+
+/* Bubble Glow Hover */
+
+nav a:hover{
+background:#c9a227;
+color:black;
+box-shadow:0 0 15px #c9a227;
+transform:translateY(-3px);
+}
+
+
+/* ===============================
+   BUTTON STYLE
+=================================*/
+
+.btn{
+display:inline-block;
+padding:12px 28px;
+background:#111;
+color:white;
+text-decoration:none;
+border-radius:30px;
+transition:0.4s;
+font-weight:500;
+letter-spacing:1px;
+}
+
+.btn:hover{
+background:#c9a227;
+color:black;
+box-shadow:0 0 20px #c9a227;
+transform:scale(1.05);
+}
+
+
+/* ===============================
+   CONTAINER
+=================================*/
+
+.container{
+padding:80px 10%;
+}
+
+
+/* ===============================
+   CARD / BUBBLE STYLE
+=================================*/
+
+.card{
+background:white;
+padding:35px;
+border-radius:25px;
+margin-top:30px;
+box-shadow:0px 8px 20px rgba(0,0,0,0.08);
+transition:0.5s;
+position:relative;
+overflow:hidden;
+}
+
+
+/* Glow Effect */
+
+.card::before{
+content:"";
+position:absolute;
+width:120%;
+height:120%;
+background:radial-gradient(circle,#c9a22733,transparent 60%);
+top:-50%;
+left:-50%;
+transform:scale(0);
+transition:0.5s;
+}
+
+.card:hover::before{
+transform:scale(1);
+}
+
+.card:hover{
+transform:translateY(-12px);
+box-shadow:0px 20px 35px rgba(0,0,0,0.15);
+}
+
+
+/* ===============================
+   SECTION TITLE
+=================================*/
+
+h2{
+font-size:34px;
+margin-bottom:20px;
+font-weight:600;
+position:relative;
+}
+
+h2::after{
+content:"";
+width:60px;
+height:4px;
+background:#c9a227;
+position:absolute;
+left:0;
+bottom:-8px;
+border-radius:5px;
+}
+
+
+/* ===============================
+   IMAGES
+=================================*/
+
+img{
+margin-top:15px;
+border-radius:18px;
+transition:0.4s;
+}
+
+img:hover{
+transform:scale(1.05);
+box-shadow:0 15px 30px rgba(0,0,0,0.2);
+}
+
+
+/* ===============================
+   GRID BOX (index page)
+=================================*/
+
+.box{
+background:white;
+padding:30px;
+border-radius:25px;
+box-shadow:0px 10px 25px rgba(0,0,0,0.08);
+transition:0.5s;
+position:relative;
+overflow:hidden;
+}
+
+.box::before{
+content:"";
+position:absolute;
+width:200%;
+height:200%;
+background:radial-gradient(circle,#c9a22722,transparent 60%);
+top:-80%;
+left:-80%;
+transform:scale(0);
+transition:0.5s;
+}
+
+.box:hover::before{
+transform:scale(1);
+}
+
+.box:hover{
+transform:translateY(-10px);
+box-shadow:0px 20px 40px rgba(0,0,0,0.15);
+}
+
+
+/* ===============================
+   HERO TEXT EFFECT
+=================================*/
+
+.hero-text h1{
+font-size:50px;
+font-weight:700;
+letter-spacing:2px;
+}
+
+.hero-text span{
+color:#c9a227;
+}
+
+
+/* ===============================
+   FOOTER
+=================================*/
+
+footer{
+margin-top:80px;
+background:#111;
+color:white;
+text-align:center;
+padding:30px;
+font-size:14px;
+letter-spacing:1px;
+}
+
+
+/* ===============================
+   SCROLL ANIMATION
+=================================*/
+
+.card, .box, .section, img{
+animation:fadeUp 1s ease forwards;
+opacity:0;
+}
+
+@keyframes fadeUp{
+from{
+transform:translateY(30px);
+opacity:0;
+}
+to{
+transform:translateY(0);
+opacity:1;
+}
+}
+
+
+/* ===============================
+   RESPONSIVE
+=================================*/
+
+@media(max-width:768px){
+
+nav ul{
+gap:20px;
+flex-wrap:wrap;
+}
+
+.container{
+padding:60px 5%;
+}
+
+.hero{
+flex-direction:column;
+text-align:center;
+}
+
+.section{
+flex-direction:column;
+text-align:center;
+}
+
+.section img{
+margin-top:20px;
+}
+
+}
